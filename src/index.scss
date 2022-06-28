@@ -1,0 +1,445 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;  
+}
+h4 {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  background-color: #1e1c1c;
+  color: orange;
+  .logo {
+    height: 40vmin;
+    pointer-events: none;
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;
+  }
+  .title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}
+
+.login-block {
+  height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .title {
+    margin-bottom: 20px; 
+    font-size: 24px;   
+  }
+  .name, .password {
+    height: 40px;
+    width: 242px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #919191;    
+  }
+  .password-block {
+    position: relative;
+    label {
+      position: absolute;
+      right: 10px;
+      top: 15px;
+      input[type=checkbox] {
+        display: none; 
+      }  
+      .pass-img {
+        width: 25px;        
+        display: block;
+      }
+    }
+  }
+  .incorrect {
+    font-size: 14px;
+    margin: 0 0 15px 0;
+    color: red;
+  }
+
+  .login-btn, .registr-btn {
+    height: 40px;  
+    width: 250px; 
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: 0.5s all;
+    background: orange;
+    color: #fff; 
+    padding: 0 24px;
+    margin-bottom: 15px;
+  }
+  .registr-btn {
+    background: #1e1c1c;
+  }
+}
+.main {
+  background: #eee;
+  padding: 10px;
+}
+
+.greeting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;  
+  opacity: 0.8;
+  .title {
+    &:before {
+      content: url('./user15.png');
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+  }
+  .exit-btn {    
+    transition: 0.5s all;    
+    text-decoration: underline;
+    margin-left: 10px; 
+    &:before {
+      content: url('./exit15.png');
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+  }
+}
+
+.input-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;  
+  margin-bottom: 15px;
+  .input-name {
+    height: 100%;
+    width: 65%;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 24px;
+    color: #1e1c1c;
+    &::placeholder {
+      color: #bebebe;
+      font-size: 16px;
+    }
+  }   
+
+  label {	      
+    border-bottom: none;
+    width: inherit;     
+    .label-span {
+      width: 100%;						
+      line-height: 20px;
+      &::before {
+        content: "High";
+          display: inline-block; 
+          font-size: 12px;                     
+          background: #dedede;
+          border-radius: 4px;
+          padding: 0 10px;            
+          vertical-align: baseline;            				    
+          line-height: 30px;	
+      }
+    }
+    input[type=checkbox] {
+      display: none;       
+      &:checked + span::before { 
+        content: "High";
+        font-weight: bold;
+        background: orange;
+      }						
+    }
+  } 
+
+
+}
+
+.btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  font-size: 24px;
+  transition: 0.5s all;
+  color: #fff;    
+}
+
+.delete-btn {
+  background: #ea7575; 
+  font-size: 16px;   
+  &:hover {
+    background: red;
+  }
+}
+.add-btn {    
+  background: #5bc55b;    
+  &:hover {
+    background: green;
+  }
+}
+.delete-all-btn {   
+  display: block; 
+  margin: 15px 0 15px auto;  
+  border: none; 
+  transition: 0.5s all;
+  background: none;
+  color: #969696;
+  text-decoration: underline;    
+  &:hover {
+    text-decoration: none;
+    background: none;
+  } 
+}
+
+.start-create { 
+  display: block;
+  margin: 30px auto;
+  padding: 0 30px;
+  width: max-content;
+  height: 50px;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  transition: 0.5s all;
+  background: #1e1c1c;
+  color: #fff; 
+}
+.update {
+  &:before {
+    content: url(update.png);
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+}
+ 
+.disabled {
+  opacity: 0.4;
+}  
+
+.progress {
+  width: 100%;
+  height: 4px;
+  background: #000;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+  .indeterminate {
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    background: orange;
+    top: 0;
+    left: 0;
+  }
+}
+
+.total-players {
+  margin-bottom: 15px;
+  text-align: end;
+  background: #faf5f5;
+  padding: 5px 10px;
+  border-radius: 4px;
+  span {
+    font-weight: bold;
+    font-size: 18px;
+  }
+}
+
+.players {
+  .player {
+    height: 40px;
+    font-size: 18px;  
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 2px 0;
+    border-bottom: 2px solid #fff;  
+    .is-high {
+      display: inline-block;      
+      background: orange;
+      font-size: 12px;   
+      font-weight: bold;   
+      margin-right: 10px;
+      border-radius: 4px;      
+      padding: 0 10px;
+      vertical-align: baseline;
+      line-height: 30px;
+    } 
+    .not-high {
+      display: inline-block;      
+      background: #dedede;
+      font-size: 12px;      
+      margin-right: 10px;
+      border-radius: 4px;      
+      padding: 0 10px;
+      vertical-align: baseline;
+      line-height: 30px;
+    }
+    label {	 
+      display: block;  
+      // width: calc(100% - 40px);
+      .label-span {
+        width: 100%;						
+        line-height: 20px;
+        position: relative;
+        &::before {
+          content: ""; //после
+          display: inline-block;
+          box-sizing: border-box;
+          width: 45px;
+          height: 24px;
+          background-color: white;
+          border: 1px solid #dedede;
+          border-radius: 15px;
+          margin-right: 10px;
+          vertical-align: baseline;
+          text-align: center;						    
+          line-height: 30px;						    
+          color: #1e1c1c;
+          position: relative;      
+        }
+        &::after {
+          content: ""; //после
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          border-radius: 100%;
+          background: #dedede;
+          position: absolute;
+          left: 0;
+          top: 0;
+          transform: translate(24px, -1px);
+        }
+      }
+      input[type=checkbox] { 
+        display: none;
+        &:checked + span {
+          font-weight: 700;
+        }
+        // &:checked + span::before { //до
+        //   content: "";
+        // }						
+        &:checked + span::after { //до
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          border-radius: 100%;
+          background: #ffa50087;
+          position: absolute;
+          left: 0;
+          top: 0;
+          transform: translate(5px, -1px);
+        }						
+      }
+    }
+  }
+}
+.teams {  
+  display: flex;
+  flex-wrap: wrap;
+  h4 {
+    margin: 0 auto 20px;
+  }
+  .team {
+    padding: 10px;    
+    margin: 0 5px 5px 0;
+    background: #fff;
+    border: 2px solid #dedede;
+    border-radius: 4px;   
+    width: max-content;
+    .team-name {
+      font-weight: bold;      
+      background: #eee;
+      border-radius: 4px;
+      padding: 4px 0 0 4px;
+      &::before {
+        content: url(logo25.png);
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: middle;       
+      }
+    }
+    .team-player {
+      margin: 2px 0;
+      display: inline-block;      
+    } 
+    .is-high {           
+      background: orange;
+      font-size: 12px;
+      margin-left: 5px;
+      border-radius: 4px;      
+      padding: 0 4px;      
+    } 
+  }
+}
+.filter-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  .filter-btn {
+    width: 30%;
+    border: none;
+    background: #dedede;
+    font-size: 12px;  
+    border-radius: 4px;      
+    padding: 0 10px;
+    vertical-align: baseline;
+    line-height: 30px;
+    &:hover {
+      background: orange;
+    }
+  }
+  .filter-btn-selected {
+    background: orange;
+  }
+}
+
+
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+  .indeterminate {
+    animation: indeterminate infinite 1s linear;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes indeterminate {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+
